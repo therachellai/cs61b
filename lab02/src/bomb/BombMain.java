@@ -11,13 +11,20 @@ public class BombMain {
         // TODO: Find the correct passwords to each phase using debugging techniques
         Bomb b = new Bomb();
         if (phase >= 0) {
-            b.phase0("Figure this out. I wonder where the phases are defined...");
+            b.phase0("39291226");
         }
         if (phase >= 1) {
-            b.phase1(null); // Figure this out too
+            b.phase1(IntList.of(0, 9, 3, 0, 8)); // Figure this out too
         }
         if (phase >= 2) {
-            b.phase2("Figure this out. I wonder where the phases are defined...");
+            // Generate a string that contains tokens that are separated by space character, e.g "1 2 3"
+            // And the string needs to be sufficiently long so that password.split(" ") will return a list of character with length >= 1338
+            // And the 1338th token needs to be -81201430
+            StringBuilder sb = new StringBuilder();
+            for (Integer i = 0; i < 1338; i++ ) {
+                sb.append(" -81201430");
+            }
+            b.phase2(sb.toString());
         }
     }
 }
